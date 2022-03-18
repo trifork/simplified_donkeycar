@@ -17,7 +17,7 @@ car_templates = ['templates/*']
 web_controller_html = package_files('donkeycar/parts/controllers/templates',
                                     'donkeycar/')
 
-extra_files = car_templates + web_controller_html
+extra_files = car_templates
 print('extra_files', extra_files)
 
 with open("README.md", "r") as fh:
@@ -36,21 +36,7 @@ setup(name='donkeycar',
               'donkey=donkeycar.management.base:execute_from_command_line',
           ],
       },
-      install_requires=[
-          'numpy',
-          'pillow',
-          'docopt',
-          'tornado',
-          'requests',
-          'h5py',
-          'PrettyTable',
-          'paho-mqtt',
-          "simple_pid",
-          'progress',
-          'typing_extensions',
-          'pyfiglet',
-          'psutil'
-      ],
+      install_requires=[],
       extras_require={
           'pi': [
               'picamera',
@@ -65,7 +51,6 @@ setup(name='donkeycar',
               'RPi.GPIO'
           ],
           'pc': [
-              'matplotlib',
               'imgaug',
               'kivy'
           ],

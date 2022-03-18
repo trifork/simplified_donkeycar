@@ -1,10 +1,7 @@
 import sys
-from pyfiglet import Figlet
 
 __version__ = '4.2.1'
-f = Figlet(font='speed')
 
-print(f.renderText('Donkey Car'))
 print(f'using donkey v{__version__} ...')
 
 if sys.version_info.major < 3 or sys.version_info.minor < 6:

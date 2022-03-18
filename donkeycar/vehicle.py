@@ -11,7 +11,6 @@ import numpy as np
 import logging
 from threading import Thread
 from .memory import Memory
-from prettytable import PrettyTable
 import traceback
 
 logger = logging.getLogger(__name__)
@@ -38,10 +37,7 @@ class PartProfiler:
 
     def report(self):
         logger.info("Part Profile Summary: (times in ms)")
-        pt = PrettyTable()
-        field_names = ["part", "max", "min", "avg"]
         pctile = [50, 90, 99, 99.9]
-        pt.field_names = field_names + [str(p) + '%' for p in pctile]
         for p, val in self.records.items():
             # remove first and last entry because you there could be one-off
             # time spent in initialisations, and the latest diff could be
@@ -54,8 +50,8 @@ class PartProfiler:
                    "%.2f" % (min(arr) * 1000),
                    "%.2f" % (sum(arr) / len(arr) * 1000)]
             row += ["%.2f" % (np.percentile(arr, p) * 1000) for p in pctile]
-            pt.add_row(row)
-        logger.info('\n' + str(pt))
+            
+            logger.info('\n' + str(row))
 
 
 class Vehicle:
