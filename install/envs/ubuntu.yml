@@ -11,5 +11,6 @@ dependencies:
   - pandas
   - pytorch=1.7.1
   - tensorflow==2.2.0
+  - pillow==9.0.1
   - pip:
     - git+https://github.com/autorope/keras-vis.git
