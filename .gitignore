@@ -149,6 +149,7 @@ dmypy.json
 cython_debug/
 
 mycar/data/
+mycar/models/
 
 # PyCharm
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
